@@ -35,7 +35,7 @@ DateTime <- strptime(paste(truncData$Date,truncData$Time,sep=" "), "%d/%m/%Y %H:
 
 hist(truncData$Global_active_power, 
      main = "Global Active Power",
-     xlab = "Global Active Power (kilowatts",
+     xlab = "Global Active Power (kilowatts)",
      ylab = "Frequency",
      col = "red")  ## Histogram
 
