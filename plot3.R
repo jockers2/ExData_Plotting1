@@ -38,6 +38,20 @@ truncData$Date <- as.Date(truncData$Date, format = "%d/%m/%Y")
 ## Plot histogram
 
 plot(DateTime, truncData$Sub_metering_1,
+        type = "l", col = "black",
+        ylab = "Energy sub metering" )
+lines(DateTime, truncData$Sub_metering_2,
+        col = "red")
+lines(DateTime, truncData$Sub_metering_3,
+        col = "blue")
+legend("topright", title = NULL, lty="solid", col=c("black","red","blue"),
+        text.width = strwidth("Sub_metering_XX"),
+        c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+
+# Need to create plot directly on png device or legend gets clipped off
+
+png("plot3.png")
+plot(DateTime, truncData$Sub_metering_1,
      type = "l", col = "black",
      ylab = "Energy sub metering" )
 lines(DateTime, truncData$Sub_metering_2,
@@ -45,9 +59,6 @@ lines(DateTime, truncData$Sub_metering_2,
 lines(DateTime, truncData$Sub_metering_3,
       col = "blue")
 legend("topright", title = NULL, lty="solid", col=c("black","red","blue"),
+       text.width = strwidth("Sub_metering_XX"),
        c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
-
-# Direct a copy to png file
-
-dev.copy(png, file = "plot3.png")
 dev.off()
