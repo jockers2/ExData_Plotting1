@@ -35,11 +35,12 @@ DateTime <- strptime(paste(truncData$Date,truncData$Time,sep=" "), "%d/%m/%Y %H:
 
 truncData$Date <- as.Date(truncData$Date, format = "%d/%m/%Y")
 
-## Plot histogram
-
+## Plot timeseries
+par(cex=0.8)
+par(ann=FALSE)
 plot(DateTime, truncData$Global_active_power,
-     type = "l",
-     ylab = "Global Active Power (kilowatts)" )
+     type = "l")
+title(ylab = "Global Active Power (kilowatts)")
 
 # Direct a copy to png file
 

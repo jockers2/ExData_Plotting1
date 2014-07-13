@@ -35,11 +35,12 @@ DateTime <- strptime(paste(truncData$Date,truncData$Time,sep=" "), "%d/%m/%Y %H:
 
 truncData$Date <- as.Date(truncData$Date, format = "%d/%m/%Y")
 
-## Plot histogram
-
+## Plot timeseries
+par(cex=0.8)
+par(ann=FALSE)
 plot(DateTime, truncData$Sub_metering_1,
-        type = "l", col = "black",
-        ylab = "Energy sub metering" )
+        type = "l", col = "black")
+title(ylab = "Energy sub metering")
 lines(DateTime, truncData$Sub_metering_2,
         col = "red")
 lines(DateTime, truncData$Sub_metering_3,
@@ -51,9 +52,11 @@ legend("topright", title = NULL, lty="solid", col=c("black","red","blue"),
 # Need to create plot directly on png device or legend gets clipped off
 
 png("plot3.png")
+par(cex=0.8)
+par(ann=FALSE)
 plot(DateTime, truncData$Sub_metering_1,
-     type = "l", col = "black",
-     ylab = "Energy sub metering" )
+     type = "l", col = "black")
+title(ylab = "Energy sub metering")
 lines(DateTime, truncData$Sub_metering_2,
       col = "red")
 lines(DateTime, truncData$Sub_metering_3,

@@ -38,7 +38,7 @@ truncData$Date <- as.Date(truncData$Date, format = "%d/%m/%Y")
 ## Multiple plots
 
 par(mfrow = c(2,2))
-par(mar = c(4.1,4.1,1.1,1.1))
+par(mar = c(5.1,4.1,1.1,1.1))
 par(ann=FALSE)
 ## plot1
 plot(DateTime, truncData$Global_active_power,
@@ -73,7 +73,7 @@ title(xlab = "datetime", ylab = "Global_reactive_power" )
 png("plot4.png")
 
         par(mfrow = c(2,2))
-        par(mar = c(4.1,4.1,1.1,1.1))
+        par(mar = c(5.1,4.1,1.1,1.1))
         par(ann=FALSE)
         ## plot1
         plot(DateTime, truncData$Global_active_power,

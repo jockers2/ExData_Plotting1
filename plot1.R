@@ -32,7 +32,7 @@ colnames(truncData) <- cnames
 DateTime <- strptime(paste(truncData$Date,truncData$Time,sep=" "), "%d/%m/%Y %H:%M:%S")
 
 ## Plot histogram
-
+par(cex=0.8)
 hist(truncData$Global_active_power, 
      main = "Global Active Power",
      xlab = "Global Active Power (kilowatts)",
